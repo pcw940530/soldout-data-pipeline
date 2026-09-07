@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: Shoe Data Pipeline CI/CD deployment test
+
+Resources:
+  ShoePipelineFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: shoe-pipeline-test
+      CodeUri: .
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      MemorySize: 128
+      Timeout: 10
